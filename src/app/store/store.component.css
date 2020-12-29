@@ -1,0 +1,27 @@
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header::before {
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background: url('sports.jpg') center no-repeat;
+    background-size: cover;
+    opacity: 0.35;
+    
+}
+.header:hover {
+    background-position: 25%;
+    transform: background-position;
+    
+}
+h1 {
+    position: relative;
+    
+}
