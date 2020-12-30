@@ -1,13 +1,45 @@
 <div class="jumbotron bg-info text-white text-center header img-responsive">
     <h1> {{ title}} </h1>
-    
+
 </div>
 <div class="container-fluid">
-   
-    <div class="row text-white">
-        <div class="col-sm-3 bg-info p-2 my-1"> {{categories.length}} Categories</div>
-        
-        <div class="col-sm-9 bg-success p-2 my-1"> {{products.length}} Products</div>
+
+    <div class="row ">
+        <div class="col-sm-3 bg-info p-2 text-white">
+            <div class="col-sm-3 bg-info p-2 my-1"> {{categories.length}} Categories</div>
+
+        </div>
+        <div class="col-sm-9 ">
+
+            <div *ngFor="let product of products" class="container-fluid  shadow product">
+                <div class="row  p-2 mb-4 product-row">
+
+                    <div class="col-sm-2  px-0 ">
+                        <img [src]="product.imgsrc"  alt="" class="rounded card-image-top">
+
+                    </div>
+
+                    <div class="col-sm-10 px-0 ">
+
+                        <div class="card  p-2 bg-light h-100">
+
+
+                            <h4> {{ product.name}}
+                                <span class="badge badge-pill badge-primary float-right ">
+                                    {{ product.price | currency: "USD": "symbol":"2.2-2"}}
+
+                                </span>
+                            </h4>
+
+
+                            <div class="card-text bg-white p-1 d-inline">
+                                {{ product.description }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
